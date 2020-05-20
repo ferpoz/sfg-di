@@ -1,7 +1,9 @@
 package io.strichpunkt.sfgdi.controllers;
 
 import io.strichpunkt.sfgdi.services.GreetingService;
+import org.springframework.stereotype.Controller;
 
+@Controller
 public class ConstructorInjectedController {
     private final GreetingService greetingService;
 
