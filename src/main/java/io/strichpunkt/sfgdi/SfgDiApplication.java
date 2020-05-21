@@ -1,9 +1,6 @@
 package io.strichpunkt.sfgdi;
 
-import io.strichpunkt.sfgdi.controllers.ConstructorInjectedController;
-import io.strichpunkt.sfgdi.controllers.MyController;
-import io.strichpunkt.sfgdi.controllers.PropertyInjectedController;
-import io.strichpunkt.sfgdi.controllers.SetterInjectedController;
+import io.strichpunkt.sfgdi.controllers.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -14,6 +11,9 @@ public class SfgDiApplication {
 	public static void main(String[] args) {
         SpringApplication.run(SfgDiApplication.class, args);
         ApplicationContext ctx = SpringApplication.run(SfgDiApplication.class, args);
+
+        I18nController i18nController = (I18nController) ctx.getBean("i18nController");
+        System.out.println(i18nController.SayHello());
 
         MyController myController = (MyController) ctx.getBean("myController");
         System.out.println("------- Primary");
